@@ -14,9 +14,8 @@ impl QuestionStruct {
             None => "http://localhost:3000/api/question".to_string(),
             Some(ref key) => format!("http://localhost:3000/api/question/{}", key,),
         };
-        log!(format!("CTEST: request: {:?}", request));
         let response = http::Request::get(&request).send().await;
-        log!(format!("CTEST: response: {:?}", response));
+        // log!(format!("CTEST: response: {:?}", response));
         match response {
             Err(e) => Msg::GotQuestion(Err(e)),
             Ok(data) => Msg::GotQuestion(data.json().await),

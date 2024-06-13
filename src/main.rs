@@ -67,7 +67,7 @@ impl Component for App {
         let question = &self.question;
         html! {
         <>
-            <h1>{ "Question" }</h1>
+            <h1>{ "Question Service" }</h1>
             if false {
                 {render_cookie(cookie)}
             }

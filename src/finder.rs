@@ -30,7 +30,7 @@ pub fn Finder(props: &FinderProps) -> Html {
         <h1>{"Search for a Question!"}</h1>
             <input type="text" placeholder="question id" oninput={change_key}/>
             <button onclick={move |_| props.on_find.emit((*key).clone())}>
-                {"Find this question"}
+                {"Find this question!"}
             </button>
         </div>
     </> }
