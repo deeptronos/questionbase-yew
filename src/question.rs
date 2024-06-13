@@ -38,7 +38,7 @@ pub fn question(question: &QuestionProps) -> Html {
     let question = &question.question;
     html! { <> // TODO edit HTML/template/css
         <span class="author">{format!("Questionieer {} asks...", &question.asker)}</span>
-        <div class="joke">
+        <div class="question">
             <span class="teller">{"Title: "}</span><span class="tellee">{question.title.clone()}</span><br/>
             <span class="teller">{"Body: "}</span> <span class="tellee">{&question.body} </span>
 
