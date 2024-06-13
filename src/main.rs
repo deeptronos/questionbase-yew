@@ -67,7 +67,7 @@ impl Component for App {
         let question = &self.question;
         html! {
         <>
-            <h1>{ "Knock-Knock" }</h1>
+            <h1>{ "Question" }</h1>
             if false {
                 {render_cookie(cookie)}
             }
@@ -80,7 +80,7 @@ impl Component for App {
                 </div>
             }
             <div>
-                <button onclick={ctx.link().callback(|_| Msg::GetQuestion(None))}>{"Tell me another!"}</button>
+                <button onclick={ctx.link().callback(|_| Msg::GetQuestion(None))}>{"Give me another question!"}</button>
             </div>
             <Finder on_find={ctx.link().callback(Msg::GetQuestion)}/>
         </>

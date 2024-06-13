@@ -37,18 +37,18 @@ pub struct QuestionProps {
 pub fn question(question: &QuestionProps) -> Html {
     let question = &question.question;
     html! { <> // TODO edit HTML/template/css
+        <span class="author">{format!("Questionieer {} asks...", &question.asker)}</span>
         <div class="joke">
-            <span class="teller">{"Knock-Knock!"}</span><br/>
-            <span class="tellee">{"Who's there?"}</span><br/>
-            <span class="teller">{question.title.clone()}</span><br/>
-            <span class="tellee">{format!("{} who?", &question.body)}</span><br/>
+            <span class="teller">{"Title: "}</span><span class="tellee">{question.title.clone()}</span><br/>
+            <span class="teller">{"Body: "}</span> <span class="tellee">{&question.body} </span>
+
         </div>
         <span class="annotation">
             {format!("[id: {}", &question.id)}
             // if let Some(ref tags) = question.tags {
             //     {format!("; tags: {}", &format_tags(tags))}
             // }
-            {format!("; source: {}", &question.asker)}
+            // {format!("; source: {}", &question.asker)}
             {"]"}
         </span>
     </> }
